@@ -19,8 +19,6 @@ from joblib import load
 app   = Flask(__name__, static_url_path='/static')
 model = None
 
-run_with_ngrok(app)
-
 # =[Routing]=====================================
 
 # [Routing untuk Halaman Utama atau Home]	
@@ -76,6 +74,7 @@ if __name__ == '__main__':
 	model = load('model_iris_dt.model')
 
 	# Run Flask di Google Colab menggunakan ngrok
+	run_with_ngrok(app)
 	app.run()
 	
 	
